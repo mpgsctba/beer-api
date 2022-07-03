@@ -1,6 +1,3 @@
-delete
-from beer;
-
 insert into beer (id,
                   name,
                   tagline,

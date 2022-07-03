@@ -16,12 +16,12 @@ public class BeerDto {
     private String first_brewed;
     private String description;
     private String image_url;
-    private double abv;
-    private double ibu;
-    private int ebc;
-    private int srm;
-    private double ph;
-    private int attenuation_level;
+    private Double abv;
+    private Double ibu;
+    private Integer ebc;
+    private Integer srm;
+    private Double ph;
+    private Integer attenuation_level;
     private ValueDto volume;
     private ValueDto boil_volume;
     private Boolean favorite;
