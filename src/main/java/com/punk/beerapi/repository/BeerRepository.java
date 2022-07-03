@@ -23,5 +23,6 @@ public interface BeerRepository extends JpaRepository<Beer, Long> {
             " or (b.name is not null and lower(b.name) like lower(concat('%', :filter,'%'))) " +
             " or (b.description is not null and lower(b.description) like lower(concat('%', :filter,'%'))))" +
             " and (:favorite is null or b.favorite = :favorite)")
-    Page<Beer> findByFilter(@Param("filter") String filter, @Param("favorite") Boolean favorite, final Pageable pageable);
+    Page<Beer> findByFilter(@Param("filter") String filter, @Param("favorite") Boolean favorite,
+                            final Pageable pageable);
 }

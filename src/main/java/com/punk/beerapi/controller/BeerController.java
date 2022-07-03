@@ -20,10 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @AllArgsConstructor
 @RestController
-@RequestMapping(value = "/beers", produces =  MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/beers", produces = MediaType.APPLICATION_JSON_VALUE)
 public class BeerController {
 
-    private BeerService service;
+    private final BeerService service;
 
     @GetMapping
     public ResponseEntity<Page<BeerDto>> findAll(@RequestParam(value = "filter", required = false) String filter,
@@ -35,13 +35,15 @@ public class BeerController {
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<BeerDto> findById(@ApiParam(name = "id", type = "Long", example = "1") @PathVariable Long id) {
+    public ResponseEntity<BeerDto> findById(
+            @ApiParam(name = "id", type = "Long", example = "1") @PathVariable Long id) {
         return new ResponseEntity<>(BeerDto.toDto(this.service.findById(id)), HttpStatus.OK);
     }
 
     @PatchMapping(path = "/{id}/favorite/{favorite}")
-    public ResponseEntity<BeerDto> updateFavorite(@ApiParam(name = "id", type = "Long", example = "1") @PathVariable Long id,
-                                            @ApiParam(name = "favorite", type = "boolean", example = "true or false") @PathVariable Boolean favorite) {
+    public ResponseEntity<BeerDto> updateFavorite(
+            @ApiParam(name = "id", type = "Long", example = "1") @PathVariable Long id,
+            @ApiParam(name = "favorite", type = "boolean", example = "true or false") @PathVariable Boolean favorite) {
         return new ResponseEntity<>(BeerDto.toDto(this.service.updateFavorite(id, favorite)), HttpStatus.OK);
     }
 }
