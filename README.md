@@ -4,6 +4,11 @@ Project built with Spring Boot starter and maven. run `mvn clean install` for de
 
 <b>JDK 17</b>
 
+<br>
+<b>Swagger</b>
+<p>The project contains the Swagger UI.</p>
+<a href="http://localhost:8080/v2/swagger-ui/#/">click here to open swagger</a>
+
 <b>H2 Database</b>
 <p>The project has H2 database to persist in execution time the entities.</p>
 <p>To see more details about the data, open the file data.sql in resources folder.</p>
