@@ -23,3 +23,5 @@ Project built with Spring Boot starter and maven. run `mvn clean install` for de
 <br>
 <b>How to start</b>
 <p>As Spring Boot Application open it in IntelliJ as maven project and create a new run configuration as Application and find for the main Java class `BeerApiApplication.java`.</p>
+
+![Screenshot 2022-07-03 at 16 38 44](https://user-images.githubusercontent.com/18265665/177047014-9427154b-a4f6-4dfd-8542-b4b34582d176.png)
